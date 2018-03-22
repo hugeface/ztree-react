@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'dva';
-import ReactTreeView from '../components/react-treeview/react-treeview';
+import UnControlledReactTreeView from '../components/react-treeview/react-treeview-uncontrolled';
+import ControlledReactTreeView from '../components/react-treeview/react-treeview-controlled';
 
 function IndexPage() {
   return (
     <div>
-      <ReactTreeView />
+      <UnControlledReactTreeView />
+      <hr />
+      <ControlledReactTreeView />
     </div>
   );
 }

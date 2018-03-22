@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TreeView from 'src/components/react-treeview/react-treeview';
+import TreeView from 'react-treeview';
 import styles from './react-treeview.less';
 
 // This example data format is totally arbitrary. No data massaging is
@@ -26,7 +26,7 @@ const dataSource = [
 // For the sake of simplicity, we're gonna use `defaultCollapsed`. Usually, a
 // [controlled component](http://facebook.github.io/react/docs/forms.html#controlled-components)
 // is preferred.
-class ReactTreeView extends Component {
+class UnControlledReactTreeView extends Component {
   render() {
     return (
       <div>
@@ -53,4 +53,4 @@ class ReactTreeView extends Component {
   }
 }
 
-export default ReactTreeView;
+export default UnControlledReactTreeView;

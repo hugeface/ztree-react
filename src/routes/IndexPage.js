@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import ReactTreeView from '../components/react-treeview';
+import ReactTreeView from '../components/react-treeview/react-treeview';
 
 function IndexPage() {
   return (

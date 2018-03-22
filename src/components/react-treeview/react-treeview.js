@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TreeView from 'react-treeview';
+import TreeView from 'src/components/react-treeview/react-treeview';
 import styles from './react-treeview.less';
 
 // This example data format is totally arbitrary. No data massaging is

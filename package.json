@@ -17,7 +17,8 @@
     "object-assign": "^4.1.0",
     "prop-types": "^15.6.0",
     "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react-dom": "^15.4.0",
+    "react-treeview": "^0.4.7"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

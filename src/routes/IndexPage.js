@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'dva';
+import ReactTreeView from '../components/react-treeview';
 
 function IndexPage() {
   return (
     <div>
-      123
+      <ReactTreeView />
     </div>
   );
 }

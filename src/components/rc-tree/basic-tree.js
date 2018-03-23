@@ -81,7 +81,7 @@ class BasicTree extends React.Component {
         className="myCls"
         showLine
         checkable
-        selectable={ false }
+        selectable={false}
         defaultExpandAll
         onExpand={this.onExpand}
         defaultSelectedKeys={this.state.defaultSelectedKeys}

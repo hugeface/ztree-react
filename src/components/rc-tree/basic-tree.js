@@ -51,7 +51,7 @@ class BasicTree extends React.Component {
       <span style={{ color: 'red' }} onClick={this.onDel}>Delete</span>
     </span>);
     return (<div style={{ margin: '0 20px' }}>
-      <h2>simple</h2>
+      <h3>Simple</h3>
       <Tree
         className="myCls" showLine checkable defaultExpandAll
         defaultExpandedKeys={this.state.defaultExpandedKeys}
@@ -76,7 +76,7 @@ class BasicTree extends React.Component {
         </TreeNode>
       </Tree>
 
-      <h2>Check on Click TreeNode</h2>
+      <h3>Check on Click TreeNode</h3>
       <Tree
         className="myCls"
         showLine

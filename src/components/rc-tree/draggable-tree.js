@@ -78,7 +78,7 @@ class DraggableTree extends Component {
       });
     };
     return (<div className="draggable-demo">
-      <h2>draggable </h2>
+      <h3>draggable </h3>
       <p>drag a node into another node</p>
       <div className="draggable-container">
         <Tree

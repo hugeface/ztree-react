@@ -3,12 +3,12 @@ import 'ztree';
 
 let ztreeIndex = 0;
 export default class ReactZtree extends Component {
-  constructor(props) {
-    super(props);
-    this.getTreeDom = this.getTreeDom.bind(this);
-    this.getTreeObj = this.getTreeObj.bind(this);
-    this.getTreeSetting = this.getTreeSetting.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.getTreeDom = this.getTreeDom.bind(this);
+  //   this.getTreeObj = this.getTreeObj.bind(this);
+  //   this.getTreeSetting = this.getTreeSetting.bind(this);
+  // }
   componentDidMount() {
     this.renderZtreeDom();
   }
@@ -36,8 +36,9 @@ export default class ReactZtree extends Component {
     };
   }
   renderZtreeDom() {
-    this.ztreeObj = $.fn.zTree.init(this.getTreeDom(), this.getTreeSetting(), this.props.nodes);
-    return this.ztreeObj;
+    const ztreeObj = this.ztreeObj =
+      $.fn.zTree.init(this.getTreeDom(), this.getTreeSetting(), this.props.nodes);
+    return ztreeObj;
   }
   render() {
     return (

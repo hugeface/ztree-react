@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'dva';
 import ReactZtree from './ztree-for-react';
 
 const nodes = [
@@ -17,32 +16,33 @@ const nodes = [
     ],
   },
 ];
-class ZTree extends Component {
-  constructor(props) {
-    super(props);
-    this.getEvents = this.getEvents.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-  }
+
+const check = { enable: true };
+
+export default class ZTree extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.getEvents = this.getEvents.bind(this);
+  //   this.handleClick = this.handleClick.bind(this);
+  // }
   getEvents() {
     return {
-      onClick: (event, treeId, treeNode) => { this.handleClick(event,treeId,treeNode); },
-      onCheck: (event, treeId, treeNode) => { this.handleClick(event,treeId,treeNode); },
+      onClick: (event, treeId, treeNode) => { this.handleClick(event, treeId, treeNode); },
+      onCheck: (event, treeId, treeNode) => { this.handleClick(event, treeId, treeNode); },
     };
   }
   handleClick(event, treeId, treeNode) {
     console.log(treeNode);
     console.log(this.refs.ztree.ztreeObj.getCheckedNodes());
   }
-  // handleCheck(event, treeId, treeNode) {
-  //   console.log(treeNode);
-  // }
+  handleCheck(event, treeId, treeNode) {
+    console.log(treeNode);
+  }
   render() {
     return (
       <div>
-        <ReactZtree nodes={nodes} events={this.getEvents()} />
+        <ReactZtree nodes={nodes} events={this.getEvents()} check={check} ref="ztree" />
       </div>
     );
   }
 }
-
-export default connect()(ZTree);

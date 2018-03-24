@@ -20,11 +20,6 @@ const nodes = [
 const check = { enable: true };
 
 export default class ZTree extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.getEvents = this.getEvents.bind(this);
-  //   this.handleClick = this.handleClick.bind(this);
-  // }
   getEvents() {
     return {
       onClick: (event, treeId, treeNode) => { this.handleClick(event, treeId, treeNode); },

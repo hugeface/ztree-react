@@ -3,12 +3,6 @@ import 'ztree';
 
 let ztreeIndex = 0;
 export default class ReactZtree extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.getTreeDom = this.getTreeDom.bind(this);
-  //   this.getTreeObj = this.getTreeObj.bind(this);
-  //   this.getTreeSetting = this.getTreeSetting.bind(this);
-  // }
   componentDidMount() {
     this.renderZtreeDom();
   }

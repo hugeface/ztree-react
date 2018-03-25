@@ -43,6 +43,7 @@ class ControlledReactTreeView extends Component {
     const collapsedBookkeeping = this.state.collapsedBookkeeping;
     return (
       <div>
+        <h3>react-treeview: Controlled Tree</h3>
         <button onClick={this.collapseAll}>Collapse all</button>
         {dataSource.map((node, i) => {
           // Let's make it so that the tree also toggles when we click the

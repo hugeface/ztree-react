@@ -37,6 +37,7 @@ export default class ZTree extends Component {
     return (
       <div>
         {/* ref：对组件真正实例的引用，即ReactDOM.render()返回的组件实例 */}
+        {/* ref的值设为String的方式并不推荐，未来或不支持这种方式 */}
         <ReactZtree nodes={nodes} events={this.getEvents()} check={check} ref="ztree" />
       </div>
     );

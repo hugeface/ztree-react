@@ -17,4 +17,5 @@ ztree-for-react对ztree进行了封装，使其能在React开发环境下使用�
 缺点：
 - 对jQuery有先天的依赖，必须将其引入 --- 本工程，在index.ejs中引入jquery.min.js
 - 关键代码ref="ztree"，这种ref的使用方式未来或不被支持
+- 样式引用需要Webpack额外的配置，在内置Webpack的框架(dva)中需要直接引入样式文件，才能生效
 

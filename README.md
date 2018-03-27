@@ -10,7 +10,7 @@
 - Uncontrolled tree
 
 ## ztree-for-react
-ztree是基于jQuery的，功能非常强大的树状结构组件。
+ztree是基于jQuery的，功能非常强大，在jquery下成熟稳定的树状结构组件。
 
 ztree-for-react对ztree进行了封装，使其能在React开发环境下使用。
 

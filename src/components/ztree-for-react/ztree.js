@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactZtree from './ztree-for-react';
+import './zTreeStyle/zTreeStyle.less';
 
 const nodes = [
   { name: '父节点1',

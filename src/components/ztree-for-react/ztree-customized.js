@@ -70,28 +70,38 @@ export default class TreeDraggable extends Component {
     } else {
       alert("叶子节点被锁定，无法增加子节点");
     }
-  };
+  }
   edit() {
-    var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
-      nodes = zTree.getSelectedNodes(),
-      treeNode = nodes[0];
-    if (nodes.length == 0) {
+    const zTree = $.fn.zTree.getZTreeObj('treeDemo');
+    const nodes = zTree.getSelectedNodes();
+    const treeNode = nodes[0];
+    if (nodes.length === 0) {
       alert("请先选择一个节点");
       return;
     }
     zTree.editName(treeNode);
-  };
+  }
   remove(e) {
-    var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
-      nodes = zTree.getSelectedNodes(),
-      treeNode = nodes[0];
-    if (nodes.length == 0) {
+    const zTree = $.fn.zTree.getZTreeObj('treeDemo');
+    const nodes = zTree.getSelectedNodes();
+    const treeNode = nodes[0];
+    if (nodes.length === 0) {
       alert("请先选择一个节点");
       return;
     }
-    var callbackFlag = $("#callbackTrigger").attr("checked");
+    const callbackFlag = $('#callbackTrigger').attr('checked');
     zTree.removeNode(treeNode, callbackFlag);
-  };
+  }
+  clearChildren(e) {
+    var zTree = $.fn.zTree.getZTreeObj('treeDemo'),
+      nodes = zTree.getSelectedNodes(),
+      treeNode = nodes[0];
+    if (nodes.length == 0 || !nodes[0].isParent) {
+      alert("请先选择一个父节点");
+      return;
+    }
+    zTree.removeChildNodes(treeNode);
+  }
   render() {
     const zTreeProps = {
       check: {
@@ -125,10 +135,10 @@ export default class TreeDraggable extends Component {
       <div>
         <h3>ztree-for-react: Edited Tree</h3>
         <input value="增加目录节点" type="button" onClick={this.add.bind(this, { isParent: true })} />
-        <input value="增加文件节点" type="button" />
-        <input value="编辑名称" type="button" />
-        <input value="删除节点" type="button" />
-        <input value="清空子节点" type="button" />
+        <input value="增加文件节点" type="button" onClick={this.add.bind(this, { isPatent: false })} />
+        <input value="编辑名称" type="button" onClick={this.edit.bind(this)} />
+        <input value="删除节点" type="button" onClick={this.remove.bind(this)} />
+        <input value="清空子节点" type="button" onClick={this.clearChildren.bind(this)} />
         <ReactZtree nodes={nodes} events={this.getEvents()} {...zTreeProps} ref="ztree" />
       </div>
     );

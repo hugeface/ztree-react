@@ -54,15 +54,16 @@ export default class TreeDraggable extends Component {
     }
     return true;
   }
+  newCount = 1;
   add(e) {
     var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
       isParent = e.isParent,
       nodes = zTree.getSelectedNodes(),
       treeNode = nodes[0];
     if (treeNode) {
-      treeNode = zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, isParent:isParent, name:"new node" + (newCount++)});
+      treeNode = zTree.addNodes(treeNode, { id: (100 + this.newCount), pId: treeNode.id, isParent, name: 'new node' + (this.newCount++)});
     } else {
-      treeNode = zTree.addNodes(null, {id:(100 + newCount), pId:0, isParent:isParent, name:"new node" + (newCount++)});
+      treeNode = zTree.addNodes(null, { id: (100 + this.newCount), pId: 0, isParent, name: 'new node' + (this.newCount++) });
     }
     if (treeNode) {
       zTree.editName(treeNode[0]);
@@ -123,8 +124,8 @@ export default class TreeDraggable extends Component {
     return (
       <div>
         <h3>ztree-for-react: Edited Tree</h3>
-        <input value="增加父节点" type="button" onClick={this.add.bind(this, { isParent: true })} />
-        <input value="增加叶子节点" type="button" />
+        <input value="增加目录节点" type="button" onClick={this.add.bind(this, { isParent: true })} />
+        <input value="增加文件节点" type="button" />
         <input value="编辑名称" type="button" />
         <input value="删除节点" type="button" />
         <input value="清空子节点" type="button" />

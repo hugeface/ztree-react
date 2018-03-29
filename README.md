@@ -19,9 +19,13 @@ ztree-for-react对ztree进行了封装，使其能在React开发环境下使用�
 - 关键代码ref="ztree"，这种ref的使用方式未来或不被支持
 - 样式引用需要Webpack额外的配置，在内置Webpack的框架(dva)中需要直接引入样式文件，才能生效  
 
-有点：功能最强，没有之一，具体见官网（http://www.treejs.cn/v3/main.php#_zTreeInfo）
-
 ```
 import './zTreeStyle/zTreeStyle.less';
 ```
+
+有点：功能最强，没有之一，具体见官网（http://www.treejs.cn/v3/main.php#_zTreeInfo）
+
+# 调研总结
+
+想要样式、功能与需求完美契合的树状菜单组件，还是自己写吧
 

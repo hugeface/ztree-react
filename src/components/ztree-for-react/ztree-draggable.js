@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ReactZtree from './ztree-for-react';
-import './zTreeStyle/zTreeStyle.less';
+import './awesomeStyle/awesome.less';
 
 const nodes = [
-  { name: '父节点1',
+  { name: '根节点',
     id: 0,
     children: [
       { name: '子节点1',
@@ -11,7 +11,7 @@ const nodes = [
       { name: '子节点2',
         id: 2,
         children: [
-          { name: '子节点3', id: 3 },
+          { name: '孙子节点', id: 3 },
         ],
       },
     ],
@@ -36,14 +36,13 @@ export default class TreeDraggable extends Component {
   }
   render() {
     const zTreeProps = {
-      // treeId: props.treeId,
-      // treeObj: props.treeObj,
-      // async: props.async,
-      // callback: props.events,
-      check: { enable: false },
-      // data: nodes,
-      // edit: props.edit,
-      // view: props.view,
+      check: {
+        enable: true,
+        radioType: 'level',
+      },
+      edit: {
+        enable: true,
+      },
     };
     return (
       <div>

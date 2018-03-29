@@ -11,16 +11,16 @@ import styles from './IndexPage.less';
 function IndexPage() {
   return (
     <div className={styles.container}>
-      <UnControlledReactTreeView />
-      <hr />
-      <ControlledReactTreeView />
-      <hr />
-      <DraggableTree />
-      <hr />
-      <BasicTree />
-      <hr />
-      <ZTree />
-      <hr />
+      {/*<UnControlledReactTreeView />*/}
+      {/*<hr />*/}
+      {/*<ControlledReactTreeView />*/}
+      {/*<hr />*/}
+      {/*<DraggableTree />*/}
+      {/*<hr />*/}
+      {/*<BasicTree />*/}
+      {/*<hr />*/}
+      {/*<ZTree />*/}
+      {/*<hr />*/}
       <ZTreeDraggable />
     </div>
   );

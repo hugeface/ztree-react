@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import 'ztree';
 
-let ztreeIndex = 0;
 export default class ReactZtree extends Component {
   componentDidMount() {
     this.renderZtreeDom();
@@ -36,8 +35,7 @@ export default class ReactZtree extends Component {
   }
   render() {
     return (
-      <div className="ztree" ref="ztree" id={`ztree_${ztreeIndex++}`}>
-      </div>
+      <div id="treeDemo" className="ztree" ref="ztree" />
     );
   }
 }

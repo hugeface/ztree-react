@@ -5,6 +5,7 @@ import ControlledReactTreeView from '../components/react-treeview/react-treeview
 import DraggableTree from '../components/rc-tree/draggable-tree';
 import BasicTree from '../components/rc-tree/basic-tree';
 import ZTree from '../components/ztree-for-react/ztree';
+import ZTreeDraggable from '../components/ztree-for-react/ztree-draggable';
 import styles from './IndexPage.less';
 
 function IndexPage() {
@@ -19,6 +20,8 @@ function IndexPage() {
       <BasicTree />
       <hr />
       <ZTree />
+      <hr />
+      <ZTreeDraggable />
     </div>
   );
 }

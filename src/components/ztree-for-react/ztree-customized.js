@@ -3,7 +3,7 @@ import ReactZtree from './ztree-for-react';
 import './zTreeStyle/zTreeCustomizedStyle.less';
 
 const nodes = [
-  { name: '根节点',
+  { name: '派斡信息技术有限公司',
     id: 0,
     children: [
       { name: '子节点1',
@@ -31,6 +31,17 @@ export default class TreeDraggable extends Component {
   }
   handleCheck(event, treeId, treeNode) {
     console.log(treeNode);
+  }
+  addDiyDom(treeId, treeNode) {
+    const spaceWidth = 5;
+    const switchObj = $(`#${treeNode.tId}_switch`);
+    const icoObj = $(`#${treeNode.tId}_ico`);
+    switchObj.remove();
+    icoObj.before(switchObj);
+    if (treeNode.level > 1) {
+      const spaceStr = `<span style='display: inline-block;width:${(spaceWidth * treeNode.level)}px'></span>`;
+      switchObj.before(spaceStr);
+    }
   }
   log;
   className = 'dark';
@@ -132,6 +143,7 @@ export default class TreeDraggable extends Component {
         showIcon: false,
         showLine: false,
         expandSpeed: 0,
+        addDiyDom: this.addDiyDom,
       },
       data: {
         keep: {

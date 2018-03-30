@@ -154,6 +154,7 @@ export default class TreeDraggable extends Component {
         <input value="编辑名称" type="button" onClick={this.edit.bind(this)} />
         <input value="删除节点" type="button" onClick={this.remove.bind(this)} />
         <input value="清空子节点" type="button" onClick={this.clearChildren.bind(this)} />
+        <br /><br />
         <ReactZtree nodes={nodes} events={this.getEvents()} {...zTreeProps} ref="ztree" />
       </div>
     );

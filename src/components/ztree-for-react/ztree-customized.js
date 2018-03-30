@@ -54,11 +54,11 @@ export default class TreeDraggable extends Component {
   }
   beforeRemove(treeId, treeNode) {
     this.className = (this.className === 'dark' ? '' : 'dark');
-    showLog(`[ ${getTime()} beforeRemove ]&nbsp;&nbsp;&nbsp;&nbsp; ${treeNode.name}`);
+    this.showLog(`[ ${this.getTime()} beforeRemove ]&nbsp;&nbsp;&nbsp;&nbsp; ${treeNode.name}`);
     return confirm(`确认删除 节点 -- ${treeNode.name} 吗？`);
   }
   onRemove(e, treeId, treeNode) {
-    showLog(`[ ${getTime()} onRemove ]&nbsp;&nbsp;&nbsp;&nbsp; ${treeNode.name}`);
+    this.showLog(`[ ${this.getTime()} onRemove ]&nbsp;&nbsp;&nbsp;&nbsp; ${treeNode.name}`);
   }
   beforeRename(treeId, treeNode, newName) {
     if (newName.length === 0) {

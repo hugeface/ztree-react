@@ -34,6 +34,21 @@ export default class TreeDraggable extends Component {
   }
   log;
   className = 'dark';
+  showLog(str) {
+    if (!this.log) this.log = $('#log');
+    this.log.append(`<li class='${this.className}'>${str}</li>`);
+    if (this.log.children('li').length > 8) {
+      this.log.get(0).removeChild(this.log.children('li')[0]);
+    }
+  }
+  getTime() {
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    const s = now.getSeconds();
+    const ms = now.getMilliseconds();
+    return (h + ':' + m + ':' + s + ' ' + ms);
+  }
   beforeDrag(treeId, treeNodes) {
     return false;
   }
@@ -96,7 +111,7 @@ export default class TreeDraggable extends Component {
     var zTree = $.fn.zTree.getZTreeObj('treeDemo'),
       nodes = zTree.getSelectedNodes(),
       treeNode = nodes[0];
-    if (nodes.length == 0 || !nodes[0].isParent) {
+    if (nodes.length === 0 || !nodes[0].isParent) {
       alert('请先选择一个父节点');
       return;
     }

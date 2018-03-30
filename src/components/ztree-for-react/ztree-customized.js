@@ -38,25 +38,25 @@ export default class TreeDraggable extends Component {
     return false;
   }
   beforeRemove(treeId, treeNode) {
-    className = (className === "dark" ? "":"dark");
-    showLog("[ "+getTime()+" beforeRemove ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
-    return confirm("确认删除 节点 -- " + treeNode.name + " 吗？");
+    this.className = (this.className === 'dark' ? '' : 'dark');
+    showLog(`[ ${getTime()} beforeRemove ]&nbsp;&nbsp;&nbsp;&nbsp; ${treeNode.name}`);
+    return confirm(`确认删除 节点 -- ${treeNode.name} 吗？`);
   }
   onRemove(e, treeId, treeNode) {
-    showLog("[ "+getTime()+" onRemove ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
+    showLog(`[ ${getTime()} onRemove ]&nbsp;&nbsp;&nbsp;&nbsp; ${treeNode.name}`);
   }
   beforeRename(treeId, treeNode, newName) {
-    if (newName.length == 0) {
-      alert("节点名称不能为空.");
-      var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-      setTimeout(function(){zTree.editName(treeNode)}, 10);
+    if (newName.length === 0) {
+      alert('节点名称不能为空.');
+      const zTree = $.fn.zTree.getZTreeObj('treeDemo');
+      setTimeout(() => { zTree.editName(treeNode); }, 10);
       return false;
     }
     return true;
   }
   newCount = 1;
   add(e) {
-    var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+    var zTree = $.fn.zTree.getZTreeObj('treeDemo'),
       isParent = e.isParent,
       nodes = zTree.getSelectedNodes(),
       treeNode = nodes[0];
@@ -68,7 +68,7 @@ export default class TreeDraggable extends Component {
     if (treeNode) {
       zTree.editName(treeNode[0]);
     } else {
-      alert("叶子节点被锁定，无法增加子节点");
+      alert('叶子节点被锁定，无法增加子节点');
     }
   }
   edit() {
@@ -76,7 +76,7 @@ export default class TreeDraggable extends Component {
     const nodes = zTree.getSelectedNodes();
     const treeNode = nodes[0];
     if (nodes.length === 0) {
-      alert("请先选择一个节点");
+      alert('请先选择一个节点');
       return;
     }
     zTree.editName(treeNode);
@@ -86,7 +86,7 @@ export default class TreeDraggable extends Component {
     const nodes = zTree.getSelectedNodes();
     const treeNode = nodes[0];
     if (nodes.length === 0) {
-      alert("请先选择一个节点");
+      alert('请先选择一个节点');
       return;
     }
     const callbackFlag = $('#callbackTrigger').attr('checked');
@@ -97,7 +97,7 @@ export default class TreeDraggable extends Component {
       nodes = zTree.getSelectedNodes(),
       treeNode = nodes[0];
     if (nodes.length == 0 || !nodes[0].isParent) {
-      alert("请先选择一个父节点");
+      alert('请先选择一个父节点');
       return;
     }
     zTree.removeChildNodes(treeNode);
@@ -129,7 +129,7 @@ export default class TreeDraggable extends Component {
         beforeRemove: this.beforeRemove,
         beforeRename: this.beforeRename,
         onRemove: this.onRemove,
-      }
+      },
     };
     return (
       <div>

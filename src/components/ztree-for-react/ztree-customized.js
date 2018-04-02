@@ -105,6 +105,10 @@ export default class TreeDraggable extends Component {
       alert('请先选择一个节点');
       return;
     }
+    if (treeNode.level === 0) {
+      alert('根节点不可编辑');
+      return;
+    }
     zTree.editName(treeNode);
   }
   remove(e) {
@@ -160,7 +164,7 @@ export default class TreeDraggable extends Component {
     };
     return (
       <div>
-        <h3>ztree-for-react: Edited Tree</h3>
+        <h3>ztree-for-react: Customized Theme Tree</h3>
         <input value="增加目录节点" type="button" onClick={this.add.bind(this, { isParent: true })} />
         <input value="增加文件节点" type="button" onClick={this.add.bind(this, { isPatent: false })} />
         <input value="编辑名称" type="button" onClick={this.edit.bind(this)} />

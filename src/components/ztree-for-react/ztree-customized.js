@@ -33,13 +33,13 @@ export default class TreeDraggable extends Component {
     console.log(treeNode);
   }
   addDiyDom(treeId, treeNode) {
-    const spaceWidth = 10;
+    const spaceWidth = 15;
     const switchObj = $(`#${treeNode.tId}_switch`);
     const icoObj = $(`#${treeNode.tId}_ico`);
     switchObj.remove();
     icoObj.before(switchObj);
     if (treeNode.level > 0) {
-      const spaceStr = `<span style='display: inline-block;width:${(spaceWidth * treeNode.level) + 5}px'></span>`;
+      const spaceStr = `<span style='display: inline-block;width:${spaceWidth * treeNode.level}px;'></span>`;
       switchObj.before(spaceStr);
     }
   }

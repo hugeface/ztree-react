@@ -21,7 +21,7 @@ function IndexPage() {
       {/*<hr />*/}
       {/*<ZTree />*/}
       {/*<hr />*/}
-      <ZTreeCustomized />
+      <ZTreeCustomized {...{ treeId: 'treeDemo' }} />
     </div>
   );
 }

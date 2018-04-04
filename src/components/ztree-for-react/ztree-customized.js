@@ -6,19 +6,32 @@ const nodes = [
   { name: '派斡信息技术有限公司',
     id: 0,
     children: [
-      { name: '子节点1',
+      { name: '产品部',
         id: 1 },
-      { name: '子节点2',
+      { name: '设计部',
         id: 2,
         children: [
-          { name: '孙子节点', id: 3 },
+          { name: '名字超长的部门部门部门部门部门部门部门',
+            id: 3,
+            children: [
+              { name: '研发1组', id: 4 },
+              { name: '研发2组', id: 5 },
+              { name: '研发3组', id: 6 },
+              { name: '研发4组', id: 7 },
+              { name: '研发5组', id: 8 },
+            ],
+          },
         ],
       },
     ],
   },
 ];
 
-export default class TreeDraggable extends Component {
+export default class OrgTree extends Component {
+  constructor(props) {
+    super(props);
+    this.treeId = props.treeId;
+  }
   getEvents() {
     return {
       onClick: (event, treeId, treeNode) => { this.handleClick(event, treeId, treeNode); },
@@ -33,7 +46,7 @@ export default class TreeDraggable extends Component {
     console.log(treeNode);
   }
   addDiyDom(treeId, treeNode) {
-    const spaceWidth = 15;
+    const spaceWidth = 10;
     const switchObj = $(`#${treeNode.tId}_switch`);
     const icoObj = $(`#${treeNode.tId}_ico`);
     switchObj.remove();
@@ -74,7 +87,7 @@ export default class TreeDraggable extends Component {
   beforeRename(treeId, treeNode, newName) {
     if (newName.length === 0) {
       alert('节点名称不能为空.');
-      const zTree = $.fn.zTree.getZTreeObj('treeDemo');
+      const zTree = $.fn.zTree.getZTreeObj(this.treeId);
       setTimeout(() => { zTree.editName(treeNode); }, 10);
       return false;
     }
@@ -82,7 +95,7 @@ export default class TreeDraggable extends Component {
   }
   newCount = 1;
   add(e) {
-    var zTree = $.fn.zTree.getZTreeObj('treeDemo'),
+    var zTree = $.fn.zTree.getZTreeObj(this.treeId),
       isParent = e.isParent,
       nodes = zTree.getSelectedNodes(),
       treeNode = nodes[0];
@@ -98,7 +111,7 @@ export default class TreeDraggable extends Component {
     }
   }
   edit() {
-    const zTree = $.fn.zTree.getZTreeObj('treeDemo');
+    const zTree = $.fn.zTree.getZTreeObj(this.treeId);
     const nodes = zTree.getSelectedNodes();
     const treeNode = nodes[0];
     if (nodes.length === 0) {
@@ -112,7 +125,7 @@ export default class TreeDraggable extends Component {
     zTree.editName(treeNode);
   }
   remove(e) {
-    const zTree = $.fn.zTree.getZTreeObj('treeDemo');
+    const zTree = $.fn.zTree.getZTreeObj(this.treeId);
     const nodes = zTree.getSelectedNodes();
     const treeNode = nodes[0];
     if (nodes.length === 0) {
@@ -123,7 +136,7 @@ export default class TreeDraggable extends Component {
     zTree.removeNode(treeNode, callbackFlag);
   }
   clearChildren(e) {
-    var zTree = $.fn.zTree.getZTreeObj('treeDemo'),
+    var zTree = $.fn.zTree.getZTreeObj(this.treeId),
       nodes = zTree.getSelectedNodes(),
       treeNode = nodes[0];
     if (nodes.length === 0 || !nodes[0].isParent) {
@@ -134,11 +147,14 @@ export default class TreeDraggable extends Component {
   }
   render() {
     const zTreeProps = {
+      setting: {
+        treeId: this.treeId,
+      },
       check: {
         enable: false,
       },
       edit: {
-        enable: true,
+        enable: false,
         draggable: false,
         showRemoveBtn: false,
         showRenameBtn: false,
@@ -164,13 +180,12 @@ export default class TreeDraggable extends Component {
     };
     return (
       <div>
-        <h3>ztree-for-react: Customized Theme Tree</h3>
         <input value="增加目录节点" type="button" onClick={this.add.bind(this, { isParent: true })} />
         <input value="增加文件节点" type="button" onClick={this.add.bind(this, { isPatent: false })} />
         <input value="编辑名称" type="button" onClick={this.edit.bind(this)} />
         <input value="删除节点" type="button" onClick={this.remove.bind(this)} />
         <input value="清空子节点" type="button" onClick={this.clearChildren.bind(this)} />
-        <br /><br />
+        <br /><br /><br /><br />
         <ReactZtree nodes={nodes} events={this.getEvents()} {...zTreeProps} ref="ztree" />
       </div>
     );

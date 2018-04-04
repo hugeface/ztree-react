@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import 'ztree';
 
 export default class ReactZtree extends Component {
+  constructor(props) {
+    super(props);
+    this.treeId = props.setting.treeId;
+  }
   componentDidMount() {
     this.renderZtreeDom();
   }
@@ -9,7 +13,7 @@ export default class ReactZtree extends Component {
     this.renderZtreeDom();
   }
   componentWillUnmount() {
-    this.ztreeObj.destory();
+    this.ztreeObj.destroy(this.treeId);
   }
   getTreeObj() { return this.ztreeObj; }
   getTreeDom() {
@@ -18,8 +22,8 @@ export default class ReactZtree extends Component {
   getTreeSetting() {
     const props = this.props;
     return {
-      treeId: props.treeId,
-      treeObj: props.treeObj,
+      treeId: props.setting.treeId,
+      treeObj: props.setting.treeObj,
       async: props.async,
       callback: props.events,
       check: props.check,
@@ -35,7 +39,7 @@ export default class ReactZtree extends Component {
   }
   render() {
     return (
-      <div id="treeDemo" className="ztree" ref="ztree" />
+      <div id={this.treeId} className="ztree" ref="ztree" />
     );
   }
 }

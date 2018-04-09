@@ -23,7 +23,7 @@ ztree-for-react对ztree进行了封装，使其能在React开发环境下使用�
 import './zTreeStyle/zTreeStyle.less';
 ```
 
-有点：功能最强，没有之一，具体见官网（http://www.treejs.cn/v3/main.php#_zTreeInfo）
+优点：功能最强，没有之一，具体见本工程开发示例devExample，以及官网示例（http://www.treejs.cn/v3/main.php#_zTreeInfo
 
 # 调研总结
 

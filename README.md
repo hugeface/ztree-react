@@ -49,3 +49,4 @@ ztree是以上几种树形插件中，功能最为强大，扩展性最优的。
 - src/routes/IndexPages.js为主展示页面，默认展示基于ztree-for-react的OrgTree组件
 - OrgTree, CompanyManagement组件实现了适应浏览器窗口的缩放效果，需要IndexPages.less配置支持，其它组件则不需要，展示时需注释掉相关Css代码
 - 要查看其它插件果，取消IndexPages中的相关注释，并且注释掉IndexPages.less中的代码
+- 为配合ztree相关实现的浏览器缩放效果，对html、body等元素做了全局配置（IndexPages.less），若要查看其它组件实现，需要自行取消、激活相关代码

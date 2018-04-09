@@ -9,6 +9,9 @@
 - Controlled tree
 - Uncontrolled tree
 
+缺点：
+- 样式扩展性差
+
 ## ztree-for-react
 ztree是基于jQuery的，功能非常强大，在jquery下成熟稳定的树状结构组件。
 
@@ -23,7 +26,7 @@ ztree-for-react对ztree进行了封装，使其能在React开发环境下使用�
 import './zTreeStyle/zTreeStyle.less';
 ```
 
-优点：功能最强，没有之一，具体见本工程开发示例devExample，以及官网示例（http://www.treejs.cn/v3/main.php#_zTreeInfo
+优点：功能最强，没有之一，具体见本工程开发示例companyManagement，以及官网示例（http://www.treejs.cn/v3/main.php#_zTreeInfo
 
 # 调研总结
 

@@ -10,7 +10,7 @@ import styles from './IndexPage.less';
 
 function IndexPage() {
   return (
-    <div className={styles.container}>
+    <div>
       {/*<UnControlledReactTreeView />*/}
       {/*<hr />*/}
       {/*<ControlledReactTreeView />*/}

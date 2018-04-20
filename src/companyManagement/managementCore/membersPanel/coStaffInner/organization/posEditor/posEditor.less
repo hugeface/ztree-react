@@ -1,0 +1,109 @@
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 49999;
+}
+.panel{
+  width: 5rem;
+  height: 4rem;
+  position: absolute;
+  top: 1.2rem;
+  left: 1.7rem;
+  z-index: 67999;
+  box-shadow: 0 0.03rem 0.1rem 0 rgba(0,0,0,0.30);
+  background-color: rgba(245,247,251,1);
+  user-select:none;
+}
+.header{
+  width: 100%;
+  height: 0.3rem;
+  line-height: 0.29rem;
+  background-image: linear-gradient(-180deg, rgba(255,255,255,.88) 0%, rgba(230,234,255,.5) 100%);
+  box-sizing: border-box;
+  border-bottom: solid .01rem #DADCE0;
+  .title{
+    font-size: 0.14rem;
+    margin-left: 0.1rem;
+    cursor: default;
+  }
+  .tools{
+    float: right;
+    margin-right: 0.1rem;
+    .tool_button{
+      float: left;
+      margin-left: 0.15rem;
+      span{
+        margin-left: 0.03rem;
+      }
+    }
+  }
+}
+.basic_info{
+  width: 4.5rem;
+  height: .8rem;
+  margin: .1rem auto .05rem auto;
+  font-size: .14rem;
+  .info_row_1{
+    height: .45rem;
+    display: flex;
+    align-items: center;
+    .name{ margin-left: .15rem }
+  }
+  .info_row_2{
+    height: .45rem;
+    display: flex;
+    align-items: center;
+    .phone{ margin-left: .15rem }
+  }
+}
+.positions{
+  width: 4.6rem;
+  min-height: 1rem;
+  margin: 0 auto;
+  font-size: .14rem;
+  max-height: 1.9rem;
+  overflow-y: scroll;
+  .position{
+    border-radius: .04rem;
+    background-color: rgba(48,48,48,.05);
+    padding: .01rem .01rem .1rem 0;  // 消除外边距合并
+    margin-bottom: .08rem;
+    .pos_dept{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;  // Flex项目垂直居中
+      padding-top: .1rem;
+    }
+    .dept_text{ margin-left: .1rem }
+    .dept_selector{
+      width: 3.5rem;
+      height: .3rem;
+      background-color: #fff;
+      margin-left: .15rem;
+    }
+  }
+}
+.positions::-webkit-scrollbar{ display: none; }
+.more_pos{
+  float: right;
+  margin: 0 .2rem 0 0;
+  font-size: .12rem;
+  color: #A0A2AF;
+  span{ color: #478EEE; cursor: pointer; }
+}
+.confirm{
+  width: 3rem;
+  height: .35rem;
+  font-size: .15rem;
+  position: absolute;
+  bottom: .1rem;
+  left: calc(~'50% - 1.5rem');
+  color: #fff;
+  background-color: #478EEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

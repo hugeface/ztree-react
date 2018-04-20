@@ -1,0 +1,49 @@
+.container{
+  height: 5.9rem;
+  display: flex;
+  user-select:none;
+  font-family: 微软雅黑;
+  background-image: linear-gradient(-180deg, rgba(235,235,241,0.98) 0%, rgba(203,218,232,0.98) 100%);
+  border: 1px solid rgba(48,48,48,0.1);
+  .side_navi{
+    width: 1.8rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    .header{
+      height: 0.7rem;
+      padding: 0.1rem;
+      i{
+        font-size: 0.26rem;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      span{
+        font-size: 0.14rem;
+        float: right;
+        width: 1.3rem;
+        overflow : hidden;  // 超出部分隐藏
+        text-overflow: ellipsis;    // 超出部分显示为省略号
+        display: -webkit-box;
+        word-break: break-all;    // 设置换行方式
+        -webkit-line-clamp: 2;  // 显示两行
+        -webkit-box-orient: vertical;   // 水平显示
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .tabs{
+      text-align: center;
+      font-size: 0.14rem;
+      span{
+        height: 0.35rem;
+        display: block;
+        line-height: 0.35rem;
+        cursor: pointer;
+      }
+      .activated{
+        background-color: #478EEE;
+      }
+    }
+  }
+}
